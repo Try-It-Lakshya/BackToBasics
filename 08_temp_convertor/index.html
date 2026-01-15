@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprature Convertor</title>
+</head>
+
+<body>
+    <input type="text" id="inp">
+    <label for="ftc">Fahrenheit to Celsius | °F to °C</label>
+    <input type="radio" name="mode" id="ftc" checked>
+    <label for="ctf">Celsius to Fahrenheit | °C to °F</label>
+    <input type="radio" name="mode" id="ctf">
+    <button id="btn">Convert !</button>
+    <h3 id="outp"></h3>
+</body>
+<script>
+    const outp = document.getElementById("outp");
+    const btn = document.getElementById("btn");
+    const ftc = document.getElementById("ftc");
+    const ctf = document.getElementById("ctf");
+    btn.onclick = function(){
+        let temp;
+        let inp = document.getElementById("inp").value;
+        inp = Number(inp)
+        if(ftc.checked){
+            temp = Math.round(inp * 9/5 + 32);
+            outp.textContent = `from Fahrenheit to Celsius : ${temp}`;
+        }
+        else if(ctf.checked){
+            temp = Math.round((inp-32)/(9/5));
+            outp.textContent = `from Celsius to Fahrenheit : ${temp}`;
+        }
+        else{
+            console.log(`Invalid Input! ${inp} - ${temp}`);
+        }
+    }
+
+</script>
+
+</html>
