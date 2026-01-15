@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate A Random Number</title>
+</head>
+<body>
+    <button id="flip">Generate</button>
+    <button id="res">Reset</button>
+    <label for="coin">Coin :: </label><h1 id="coin"></h1>
+    <label for="dice">Dice :: </label><h1 id="dice"></h1>
+    <label for="icos">Icosahedron :: </label><h1 id="icos"></h1>
+</body>
+<script>
+    const flip = document.getElementById("flip");
+    const reset = document.getElementById("res");
+    const dis_coin = document.getElementById("coin");
+    const dis_dice = document.getElementById("dice");
+    const dis_icos = document.getElementById("icos");
+    
+    flip.onclick = function(){
+        dis_coin.textContent = Math.round((Math.random() * 2 ) + 1);
+        dis_dice.textContent = Math.round((Math.random() * 6 ) + 1);
+        dis_icos.textContent = Math.round((Math.random() * 20 ) + 1);
+    }
+    reset.onclick = function(){
+        dis_coin.textContent = dis_dice.textContent = dis_icos.textContent = 0;
+    }
+
+</script>
+</html>

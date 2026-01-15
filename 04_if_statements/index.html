@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Statements</title>
+</head>
+
+<body>
+    <label for="box">Enter Your Age:</label>
+    <input type="number" id="box">
+    <button id="submit">Submit</button>
+    <h1 id="display"></h1>
+</body>
+<script>
+    const box = document.getElementById("box");
+    const submit = document.getElementById("submit");
+    const display = document.getElementById("display");
+    let a;
+    // box.textContent = `You are TOO OLD to enter this site`;
+
+
+    submit.onclick = function () {
+
+        a = box.value;
+        a = Number(a);
+
+        if (a > 100) {
+            display.textContent = `You are TOO OLD to enter this site`;
+        }
+        else if (a >= 18) {
+            display.textContent = `You can enter this site`;
+        }
+        else if (a == 0) {
+            display.textContent = `You are just born`;
+        }
+        else if (a < 0) {
+            display.textContent = `Your age can't be less than 0`;
+        }
+        else {
+            display.textContent = `You can't enter this site`;
+        }
+    }
+
+</script>
+
+</html>

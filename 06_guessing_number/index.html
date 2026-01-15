@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Number</title>
+</head>
+
+<body>
+    <script>
+        const minNum = 1;
+        const maxNum = 100;
+        const answer = Math.round((Math.random() * (maxNum - minNum) + 1));
+        console.log(answer);
+        
+        let inp,tries=0;
+
+        while (inp != answer) {
+
+            inp = window.prompt("Guess a Number!");
+            if (inp < minNum || inp > maxNum) {
+                window.alert("Enter a Vaild Input From 1-100");
+            }
+            else if(answer>inp){
+                window.alert("Higher!");
+            }
+            else if(answer<inp){
+                window.alert("Lower!");
+            }
+            else if (inp == answer) {
+                window.alert(`Correct Answer!!! It took you ${tries} Tries!`);
+                break;
+            }
+            else {
+                window.alert("Incorrect Answer!!!");
+                break
+            }
+            ++tries
+        }
+
+    </script>
+</body>
+
+</html>
